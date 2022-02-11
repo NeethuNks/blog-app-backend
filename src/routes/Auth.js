@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../model/User");
-const bcrypt = require("bcrypt");
+const bcrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 //SignUp
@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
 
     const result = User.find({username:user},(err,data)=>{
         if(data.length>0){
-            const passwordValidator = bcrypt.compareSync(userPass,data[0].password)
+            const passwordValidator = bcrpt.compare(userPass,data[0].password)
             console.log(passwordValidator)
             if(passwordValidator){
                 //token generation
