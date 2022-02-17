@@ -93,7 +93,7 @@ router.delete('/:id', async (req,res) => {
 });
 
 //Get single article
-router.get('/:id',async (req, res) => {
+router.get('api/:id',async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
     try{
@@ -107,7 +107,7 @@ router.get('/:id',async (req, res) => {
 });
 
 //Get all articles
-router.get('/',async (req, res) => {
+router.get('api/',async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
     try{

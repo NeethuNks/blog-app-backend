@@ -1,9 +1,11 @@
 const express =require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 const authRoute = require('./src/routes/Auth');
 const articleRoute = require('./src/routes/Articles');
 const multer  = require('multer')
+//const port = process.env.PORT || 8887;
 
 
 
@@ -11,9 +13,9 @@ const multer  = require('multer')
 const app = express();
 
 app.use(cors());
-app.use(express.json());
 
-const path = require('path');
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.static('./build/'));
 
